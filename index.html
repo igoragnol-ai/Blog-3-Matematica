@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Atividade de Educação Financeira</title>
+<title>Atividades</title>
 
 <style>
 body{
@@ -33,21 +33,54 @@ h1{
     margin-bottom: 30px;
 }
 
+.abas{
+    display:flex;
+    gap:10px;
+    margin-bottom:20px;
+    justify-content:center;
+}
+
+.aba{
+    padding:10px 20px;
+    border:none;
+    border-radius:5px;
+    cursor:pointer;
+    background:#ddd;
+    font-weight:bold;
+}
+
+.aba.ativa{
+    background:#3498db;
+    color:white;
+}
+
+.conteudo{
+    display:none;
+}
+
+.conteudo.ativo{
+    display:block;
+}
+
 ol{
-    padding-left: 25px;
+    padding-left:25px;
 }
 
 li{
-    margin-bottom: 15px;
+    margin-bottom:15px;
 }
 
 @media print{
     body{
-        background: white;
+        background:white;
     }
 
     .container{
-        box-shadow: none;
+        box-shadow:none;
+    }
+
+    .abas{
+        display:none;
     }
 }
 </style>
@@ -56,49 +89,89 @@ li{
 
 <div class="container">
 
-<h1>Atividade de Educação Financeira</h1>
+<h1>Atividades</h1>
 
-<div class="turma">
-    Turmas: 9A • 9B • 1LGG
+<div class="abas">
+    <button class="aba ativa" onclick="abrirAba('fund1', this)">9A • 9B • 1LGG</button>
+    <button class="aba" onclick="abrirAba('fund2', this)">2º Anos</button>
 </div>
 
-<p><strong>Nome:</strong> __________________________________________</p>
+<!-- Educação Financeira -->
+<div id="fund1" class="conteudo ativo">
 
-<p><strong>Orientação:</strong> Copie as perguntas abaixo no caderno e responda com atenção.</p>
+    <div class="turma">
+        Turmas: 9A • 9B • 1LGG
+    </div>
 
-<ol>
-    <li>O que significa assumir o controle da própria vida financeira?</li>
+    <p><strong>Nome:</strong> __________________________________________</p>
 
-    <li>Por que os meios de pagamento digitais podem dificultar a percepção dos gastos realizados?</li>
+    <p><strong>Orientação:</strong> Copie as perguntas abaixo no caderno e responda com atenção.</p>
 
-    <li>Como diferenciar uma necessidade de um desejo na hora de fazer uma compra?</li>
-
-    <li>Qual a importância de analisar regularmente para onde o dinheiro está sendo destinado?</li>
-
-    <li>O que são despesas fixas e quais são suas principais características?</li>
-
-    <li>O que são despesas variáveis e como elas podem afetar o orçamento mensal?</li>
-
-    <li>Por que é importante identificar gastos considerados supérfluos?</li>
-
-    <li>Como o cálculo entre receitas e despesas ajuda no planejamento financeiro?</li>
-
-    <li>O que acontece quando uma pessoa gasta mais do que recebe?</li>
-
-    <li>Como a divisão da renda em diferentes categorias pode contribuir para uma vida financeira mais equilibrada?</li>
-
-    <li>Por que é recomendado reservar parte da renda para poupança ou investimentos?</li>
-
-    <li>Como algumas estratégias de marketing podem influenciar as decisões de compra das pessoas?</li>
-
-    <li>Qual a função de uma reserva financeira para situações inesperadas?</li>
-
-    <li>Como os investimentos podem contribuir para o crescimento do patrimônio ao longo do tempo?</li>
-
-    <li>Por que acompanhar as finanças periodicamente ajuda a alcançar objetivos financeiros de longo prazo?</li>
-</ol>
+    <ol>
+        <li>O que significa assumir o controle da própria vida financeira?</li>
+        <li>Por que os meios de pagamento digitais podem dificultar a percepção dos gastos realizados?</li>
+        <li>Como diferenciar uma necessidade de um desejo na hora de fazer uma compra?</li>
+        <li>Qual a importância de analisar regularmente para onde o dinheiro está sendo destinado?</li>
+        <li>O que são despesas fixas e quais são suas principais características?</li>
+        <li>O que são despesas variáveis e como elas podem afetar o orçamento mensal?</li>
+        <li>Por que é importante identificar gastos considerados supérfluos?</li>
+        <li>Como o cálculo entre receitas e despesas ajuda no planejamento financeiro?</li>
+        <li>O que acontece quando uma pessoa gasta mais do que recebe?</li>
+        <li>Como a divisão da renda em diferentes categorias pode contribuir para uma vida financeira mais equilibrada?</li>
+        <li>Por que é recomendado reservar parte da renda para poupança ou investimentos?</li>
+        <li>Como algumas estratégias de marketing podem influenciar as decisões de compra das pessoas?</li>
+        <li>Qual a função de uma reserva financeira para situações inesperadas?</li>
+        <li>Como os investimentos podem contribuir para o crescimento do patrimônio ao longo do tempo?</li>
+        <li>Por que acompanhar as finanças periodicamente ajuda a alcançar objetivos financeiros de longo prazo?</li>
+    </ol>
 
 </div>
+
+<!-- Reforma Tributária -->
+<div id="fund2" class="conteudo">
+
+    <div class="turma">
+        Turmas: 2º Anos
+    </div>
+
+    <p><strong>Nome:</strong> __________________________________________</p>
+
+    <p><strong>Orientação:</strong> Copie as perguntas abaixo no caderno e responda com atenção.</p>
+
+    <ol>
+        <li>Por que o Brasil decidiu realizar uma reforma tributária?</li>
+        <li>Explique o que significa o fim da cobrança em cascata dos impostos.</li>
+        <li>Como funciona o sistema de créditos tributários no novo modelo?</li>
+        <li>O que é o Princípio do Destino na arrecadação de impostos?</li>
+        <li>Qual é a função do Comitê Gestor do IBS?</li>
+        <li>O que é o Imposto Seletivo e qual seu objetivo principal?</li>
+        <li>Como o sistema de Split Payment ajudará no combate à sonegação fiscal?</li>
+        <li>O que é o cashback tributário para famílias de baixa renda?</li>
+        <li>Como será o período de transição para o novo sistema tributário?</li>
+        <li>Quais benefícios a reforma pode trazer para a economia brasileira?</li>
+        <li>Por que empresas e empreendedores precisam se preparar para as mudanças da reforma tributária?</li>
+        <li>Quais mudanças deverão ocorrer nos sistemas de emissão de notas fiscais com a implantação da reforma tributária?</li>
+    </ol>
+
+</div>
+
+</div>
+
+<script>
+function abrirAba(id, botao){
+
+    document.querySelectorAll('.conteudo').forEach(function(secao){
+        secao.classList.remove('ativo');
+    });
+
+    document.querySelectorAll('.aba').forEach(function(btn){
+        btn.classList.remove('ativa');
+    });
+
+    document.getElementById(id).classList.add('ativo');
+    botao.classList.add('ativa');
+}
+</script>
 
 </body>
 </html>
