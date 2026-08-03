@@ -1,9 +1,209 @@
-<html>
-  <p>Contexto: Nas Olimpíadas, a prova dos 100 metros rasos masculina é o evento de atletismo mais rápido do planeta. O atual recorde mundial pertence a Usain Bolt, com o impressionante tempo de 9.58 segundos.
-Enunciado: Escreva um programa em Python que receba como entrada o tempo (em segundos, tipo float) de um atleta nessa prova. O programa deve avaliar o tempo digitado utilizando uma estrutura condicional (if, elif, else) e exibir a mensagem correspondente de acordo com as seguintes regras:
-Se o tempo for menor que 9.58, exiba: "Incrível! Novo recorde mundial!"
-Se o tempo for exatamente igual a 9.58, exiba: "Empatou com o recorde mundial de Usain Bolt!"
-Se o tempo for maior que 9.58 e menor ou igual a 10.00, exiba: "Excelente tempo! Nível de finalista olímpico."
-Se o tempo for maior que 10.00, exiba: "Bom desempenho, mas fora do padrão de elite olímpica."
-</p>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prova de Python - Olimpíadas</title>
+    <style>
+        :root {
+            --primary: #0085c7; /* Azul Olímpico */
+            --success: #00a651; /* Verde */
+            --dark: #202124;
+            --bg: #f4f6f9;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg);
+            color: var(--dark);
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        h1 {
+            color: var(--primary);
+            border-bottom: 3px solid var(--primary);
+            padding-bottom: 10px;
+            margin-top: 0;
+        }
+
+        .badge {
+            background-color: #f39c12;
+            color: white;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.9em;
+            font-weight: bold;
+        }
+
+        .contexto {
+            background-color: #e8f4fd;
+            border-left: 5px solid var(--primary);
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        code {
+            background-color: #f1f1f1;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: 'Courier New', Courier, monospace;
+            font-weight: bold;
+        }
+
+        /* Simulador Interativo */
+        .simulador {
+            margin-top: 40px;
+            padding: 25px;
+            background-color: #f8f9fa;
+            border: 2px dashed #ccc;
+            border-radius: 8px;
+        }
+
+        .simulador h2 {
+            margin-top: 0;
+            color: #333;
+            font-size: 1.4em;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+
+        input[type="number"] {
+            width: 100%;
+            max-width: 200px;
+            padding: 10px;
+            border: 2px solid #ccc;
+            border-radius: 6px;
+            font-size: 1em;
+        }
+
+        button {
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1em;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background 0.2s;
+        }
+
+        button:hover {
+            background-color: #006699;
+        }
+
+        #resultado {
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 6px;
+            display: none;
+            font-weight: bold;
+            font-size: 1.1em;
+            text-align: center;
+        }
+
+        .alert-gold { background-color: #fff2cc; color: #b78103; border: 1px solid #ffe599; }
+        .alert-silver { background-color: #e2f0d9; color: #385723; border: 1px solid #c6e0b4; }
+        .alert-bronze { background-color: #fce4d6; color: #c65911; border: 1px solid #f8cbad; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Avaliação Prática: Programação Python</h1>
+    <p><span class="badge">QUESTÃO 1</span> <strong>Vale 2.5 pontos</strong></p>
+
+    <div class="contexto">
+        <strong>Contexto Olímpico:</strong> Nas Olimpíadas, a prova dos 100 metros rasos masculina é o evento de atletismo mais rápido do planeta. O atual recorde mundial pertence a Usain Bolt, com o impressionante tempo de <strong>9.58 segundos</strong>.
+    </div>
+
+    <p><strong>Enunciado:</strong> Escreva um programa em Python que receba como entrada o tempo (em segundos, tipo <code>float</code>) de um atleta nessa prova. O programa deve avaliar o tempo digitado utilizando uma estrutura condicional (<code>if</code>, <code>elif</code>, <code>else</code>) e exibir a mensagem correspondente de acordo com as seguintes regras:</p>
+
+    <ul>
+        <li>Se o tempo for <strong>menor que 9.58</strong>, exiba: <br><code>"Incrível! Novo recorde mundial!"</code></li>
+        <li>Se o tempo for <strong>exatamente igual a 9.58</strong>, exiba: <br><code>"Empatou com o recorde mundial de Usain Bolt!"</code></li>
+        <li>Se o tempo for <strong>maior que 9.58 e menor ou igual a 10.00</strong>, exiba: <br><code>"Excelente tempo! Nível de finalista olímpico."</code></li>
+        <li>Se o tempo for <strong>maior que 10.00</strong>, exiba: <br><code>"Bom desempenho, mas fora do padrão de elite olímpica."</code></li>
+    </ul>
+
+    <!-- Área Interativa para demonstrar aos alunos -->
+    <div class="simulador">
+        <h2>🏃‍♂️ Simulador de Resultados (Testar Lógica)</h2>
+        <div class="form-group">
+            <label for="tempoAtleta">Digite o tempo do atleta (ex: 9.72):</label>
+            <input type="number" id="tempoAtleta" step="0.01" min="0" placeholder="0.00">
+        </div>
+        <button onclick="testarLogica()">Executar Código</button>
+        
+        <div id="resultado"></div>
+    </div>
+</div>
+
+<script>
+    function testarLogica() {
+        const inputTempo = document.getElementById('tempoAtleta').value;
+        const divResultado = document.getElementById('resultado');
+        
+        if (inputTempo === '') {
+            divResultado.style.display = 'block';
+            divResultado.className = 'alert-bronze';
+            divResultado.innerHTML = 'Por favor, digite um tempo válido.';
+            return;
+        }
+
+        const tempo = parseFloat(inputTempo);
+        let mensagem = '';
+        let classeCor = '';
+
+        // Execução da mesma lógica pedida no exercício do aluno
+        if (tempo < 9.58) {
+            mensagem = "Incrível! Novo recorde mundial!";
+            classeCor = "alert-gold";
+        } else if (tempo === 9.58) {
+            mensagem = "Empatou com o recorde mundial de Usain Bolt!";
+            classeCor = "alert-gold";
+        } else if (tempo <= 10.00) {
+            mensagem = "Excelente tempo! Nível de finalista olímpico.";
+            classeCor = "alert-silver";
+        } else {
+            mensagem = "Bom desempenho, mas fora do padrão de elite olímpica.";
+            classeCor = "alert-bronze";
+        }
+
+        // Exibe o output na tela simulando o print() do Python
+        divResultado.style.display = 'block';
+        divResultado.className = classeCor;
+        divResultado.innerHTML = `<strong>Saída do Programa (print):</strong> <br>"${mensagem}"`;
+    }
+</script>
+
+</body>
 </html>
