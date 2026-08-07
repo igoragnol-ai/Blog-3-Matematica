@@ -6,13 +6,13 @@
     <title>Atividade de Python</title>
     <style>
         body { font-family: 'Segoe UI', sans-serif; background: #0f172a; color: #f8fafc; margin: 0; padding: 20px; display: flex; justify-content: center; align-items: center; min-height: 100vh; }
-        .card { background: #1e293b; border: 1px solid #334155; border-radius: 12px; padding: 25px; width: 100%; max-width: 750px; box-shadow: 0 10px 15px -3px rgba(0,0,0,0.3); }
-        h1 { font-size: 1.6rem; color: #38bdf8; margin: 0 0 5px 0; text-align: center; }
+        .card { background: #1e293b; border: 1px solid #334155; border-radius: 12px; padding: 25px; width: 100%; max-width: 600px; box-shadow: 0 10px 15px -3px rgba(0,0,0,0.3); }
+        h1 { font-size: 1.5rem; color: #38bdf8; margin: 0 0 5px 0; text-align: center; }
         p { margin: 0 0 20px 0; color: #94a3b8; font-size: 0.95rem; text-align: center; }
-        .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; }
-        .section { background: #0f172a; border-radius: 8px; padding: 12px 15px; border-top: 4px solid #38bdf8; }
+        .grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; }
+        .section { background: #0f172a; border-radius: 8px; padding: 15px; border-top: 4px solid #38bdf8; }
         h2 { font-size: 1rem; color: #f1f5f9; margin: 0 0 10px 0; }
-        ul { padding-left: 15px; margin: 0; font-size: 0.85rem; color: #cbd5e1; }
+        ul { padding-left: 15px; margin: 0; font-size: 0.9rem; color: #cbd5e1; }
         li { margin-bottom: 5px; }
         .alert { color: #f43f5e; font-style: italic; list-style-type: none; margin-left: -15px; margin-top: 5px; }
         .footer { text-align: center; margin-top: 20px; font-size: 0.8rem; color: #64748b; border-top: 1px solid #334155; padding-top: 10px; }
@@ -21,41 +21,31 @@
 <body>
 
 <div class="card">
-    <h1>Atividade Python: Festival "Som do Futuro"</h1>
-    <p>Crie um programa utilizando <strong>if / elif / else</strong> para resolver as três regras do evento:</p>
+    <h1>Atividade Python: Sistema do Festival</h1>
+    <p>Crie um programa utilizando <strong>if / elif / else</strong> com as duas regras abaixo:</p>
     
     <div class="grid">
         <div class="section">
             <h2>1. Preço do Ingresso</h2>
             <ul>
-                <li><strong>Pista:</strong> R$ 150,00</li>
-                <li><strong>Premium:</strong> R$ 300,00</li>
-                <li><strong>VIP:</strong> R$ 600,00</li>
-                <li class="alert">Outro texto: "Setor inválido."</li>
+                <li>Se for <strong>Pista</strong>: R$ 150</li>
+                <li>Se for <strong>VIP</strong>: R$ 600</li>
+                <li class="alert">Outro texto: "Setor inválido"</li>
             </ul>
         </div>
         
         <div class="section">
             <h2>2. Regra de Idade</h2>
             <ul>
-                <li><strong>Menor que 16:</strong> "Proibido"</li>
-                <li><strong>16 ou 17 anos:</strong> "Apenas com autorização"</li>
-                <li><strong>18+ anos:</strong> "Livre"</li>
-            </ul>
-        </div>
-        
-        <div class="section">
-            <h2>3. Desconto</h2>
-            <ul>
-                <li><strong>0 edições:</strong> 0%</li>
-                <li><strong>1 ou 2 edições:</strong> 5%</li>
-                <li><strong>3 ou mais:</strong> 10%</li>
+                <li><strong>Menor que 16</strong>: "Entrada proibida"</li>
+                <li><strong>Menor que 18</strong>: "Precisa de autorização"</li>
+                <li><strong>18 ou mais</strong>: "Entrada livre"</li>
             </ul>
         </div>
     </div>
 
     <div class="footer">
-        Dica técnica: Lembre-se de converter os tipos de dados com int() ou float() e usar .lower() nos textos!
+        Dica: Use input() para perguntar e int() para converter a idade!
     </div>
 </div>
 
